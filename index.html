@@ -1,25 +1,337 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<style type="text/css">
-		.top{
-			position:absolute;
-			top:100px;
-		}
-		.inner{
-			position:absolute;
-			right:0px;
-			top:10px;
-		}
-		/*.bottom{
-			position:absolute;
-		}*/
-	</style>
-	<body>
-		<div class="top" style="width:200px;height:200px;background-color:red;"><div class="inner" style="width:100px;height:100px;background-color:blue;"></div></div>
-		<div class="bottom" style="width:200px;height:200px;background-color:green;"></div>
-	</body>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>跨平台紧急报警APP解决方案</h1>
+<h2>一、前言</h2>
+<h3>1.方案背景</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着经济的快速发展、社会水平的不断提高，人们的生活变得越来越便利。但是，近年来人身安全受侵害事件并没有随之减少，特别是女性受侵害的频率更是逐年升高。在公民受到人身侵害时，其往往无法进行常规程序的报警，而紧急报警App则为受侵害者提供了多种有效准确的报警途径。市面上已经有一款名气较大的私营企业开发的报警软件——怕怕。作为一款较为成熟的防护软件，其中的很多功能都有很好的实际意义和用户体验，值得我们去学习和借鉴，例如在应用内小帮手功能中的伪装来电和伪装语音功能，在一定情况下能起到一定作用。其次，实时保护功能在限定保护时间内监听定位有利有弊，利在于即便用户达到了一个无法定位的区域，我们也能判断其大概位置，缺点是功能功能耗电、耗流量、侵犯用户隐私，用户体验差。作为私营企业开发的软件，商业效果及广告目的较强，难以得到用户信任。</p>
+<h3>2.方案目标</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们团队开发的succor救援者紧急报警App便是面向这一难题，提出的最优解决方案。因为整个开发过程及架构运用的都是Hybrid技术，因此它可实现跨平台运行，其作为离生活最贴近的安防应用软件，可广泛应用于人们的日常生活中。在开发和研究的过程中，我们分析了市面上现存的多种紧急报警App优缺点，并对App紧急报警方式进行了突破性的创新。在用户体验方面，我们既考虑到尽可能方便App用户的使用，又想方设法减轻处警端的工作压力，引入人工智能技术，智能识别分配警情。因此，对于App业务算法的架构工作中，团队吸取“滴滴报警”软件的教训，力争做到既方便于用户，又服务于公安。</p>
+<h2>二、方案概述</h2>
+<h3>1.软件架构</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先，软件功能实现目的是在用户遇险或需要紧急求助时提供最快捷的帮助。因此，我们将软件的三个终端分开讨论。对于普通用户端，需要实现以下功能：①实现在用户采取报警措施后实时监听用户位置信息；②实现实时录音录像取证功能；实现证据上传服务器功能③实现一键自动发送报警短信功能④实现语音识别，自动生成报警信息功能；⑤实现账号注册登陆、手机绑定、身份证绑定、身份证与手机相关联功能；而对于巡警终端，需要实现以下功能：①实现账号注册登录，通过secret key实现身份绑定功能；②在用户登陆后实时监听附近报警信息（限定范围）并在用户界面以消息方式显示；③调用第三方地图导航，在巡警终端直接生成最快路径；对于总部服务器端，主要实现对于用户端和巡警端的数据交互逻辑，并对用户传回的数据手机整理，以用户报警的时间空间为对象建立热区展示平台，在地图上将历史报警信息通过热区的方式展示出来。警方可以通过热区数据，发现管理范围内治安状况较为不足的地区和时段，以此针对性地、有目标地加强巡逻警力。</p>
+<h3>2.UI设计</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;软件的UI界面将全部使用HTML&amp;CSS&amp;JS前端语言编写，以实现跨平台展示。<br>
+<img src="https://i.imgur.com/KZZi7OO.png" />
+<img src="https://i.imgur.com/8uRtPv2.png" /></p>
+<h2>三、功能模块</h2>
+<h3>1.警情分类</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据公安部下发的110接警中心信息收集原则，可将客户端信息收集原则定义为收集时地人事因果法（作案方法：例如区分纠纷是否持械决定警情等级）事件七大要素，根据要素大体将警情分为三类：
+①紧急报警（需要警方立即出警，调动巡特警警力）：杀人、抢劫、强奸、爆炸、绑架、持械斗殴等危害公共安全的犯罪行为（需要考虑因素：警方无法回拨电话检验警情真实性，建立用户信用机制、身份检验系统降低恶意报警率、故意提升警情等级等）
+功能要求：实时监听客户端位置信息，每隔5秒传回一次数据至接处警终端，终端应实现警报功能，提示传来紧急警情；获取用户账户信息，传回用户身份信息；上传用户指定文件
+实际效果：当用户按下SOS按钮并触发紧急报警功能，用户端将自动发送实时通讯消息至服务器，通过服务器算法分配到附近巡警终端，并在巡警端调用手机底层代码产生振动等警报效果，
+②遇险呼救（需要调动特殊警力，如消防警、救援警）：用户遇到自然灾害或因其他不可抗因素被困于某地，需要通过GPS定位获得救援（需要考虑的因素：信号问题）
+功能要求：实时监听客户端位置信息，每隔5秒传回一次数据至接处警终端，终端应实现警报功能，提示传来预先呼救；获取用户账户信息，传回用户身份信息；上传用户指定文件；终端回电功能，实现警方了解更多现场信息
+③普通警情：（需要调动地区派出所民警，当地刑警前往处理，可按正常案件处理流程进行）：盗窃、猥亵、民事纠纷、聚众闹事等，建议用户及时通过录音录像功能采集证据
+功能要求：获取用户账户信息，传回用户身份信息；上传用户指定文件；终端回电功能，实现警方了解更多现场信息。<br>
+<img src="https://i.imgur.com/JgSsPkm.png" /></p>
+<h3>2.锁屏报警</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如今市面上比较成熟的紧急报警类app在报警时都需要打开屏幕、解锁、打开app、等待延迟等等进行这一系列操作后才能实现相关功能，而succor仿照普通锁屏软件，在手机原生锁屏界面锁屏设置额外报警密码以实现软件内部的紧急报警功能，这一强大功能为广大用户增添了更安心的保护，具体技术实现如下。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们可以通过监听系统广播来实现对手机发生解锁屏后进行的操作。Android中内置了多个系统广播：只要涉及到手机的基本操作（如开机、网络状态变化、拍照等等），都会发出相应的广播每个广播都有特定的Intent - Filter（包括具体的action），我们需要用到的就是ACTION<em>SCREEN</em>ON和ACTION<em>SCREEN<em>OFF还有ACTION</em>USER</em>PRESENT这三个action，而ACTION<em>SCREEN</em>ON和ACTION<em>SCREEN<em>OFF只能通过动态注册的方式（代码内context.register和unregister），而ACTION</em>USER</em>PRESENT则是动态、静态注册两种方式都可以。可以在代码中通过调用Context的registerReceiver()方法进行动态注册BroadcastReceiver。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于我们写好的锁屏界面在被系统调出并展示在最顶层webview这一过程会产生延迟，即影像用户体验，又可能耽误最佳报警时机，因此，我们设计了改进方案，通过监听系统灭屏广播，在用户关闭屏幕锁定手机后就立即加载APP锁屏界面，将界面展示在手机最顶层webview。在此过程中，我们还需要注册service以保证APP不会因为用户关闭屏幕而被杀死，维持活性。
+因此，我们只需要将上述过程分别在Android和iOS中封装为可执行的原生SDK（Native.js），提供可调用接口，通过javascript映射java的原生代码和对象，实现跨平台开发。</p>
+<h3>3.热区显示</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于大量通过用户报警采集的数据，如果不加以合理的利用，便是一种浪费，更何况这些数据还有大量的可利用价值，最终的分析效果我们将在软件三大终端中的总部服务器端通过WEB界面展现出来。对于用户端传来报警信息中的地理坐标以及案发时间段，我们可以收集并整理起来，通过javascript实现在地图上绘制热区。
+<img src="https://i.imgur.com/Hc8oueS.png" /></p>
+<h3>4.智能警情分配</h3>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在一项报警软件开发的工作中，最需要考虑的一项问题便是警务端工作压力。大量的报警信息通过报警软件发送到警务终端、指挥中心，这无疑增加了指挥中心接警工作的强度，如果没把这项因素考虑在内，就像此前的“滴滴报警APP”，看似功能齐全，却引起警界很大的反响和抵触。而我们的succor在建立服务端算法的时候，便将此因素考虑在内，对用户传来的普通警情类信息，我们尝试引入人工智能技术，通过机器学习将用户发来的不同信息打上标记，通过机器去自动分类，并在最终生成有效解决方案（例如：警情ID:12137属于民事纠纷，归属北京市大兴区团河派出所管辖）。我们团队在后期会努力实现机器对警情的自动分配，并分发至相关单位的警务终端。具体实现理论如下：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机器学习中监督学习模型的任务重点在于，根据已有经验知识对未知样本的目标、标记进行预测。根据目标预测变量的类型不同，我们把监督学习任务大体分为分类学习与回归预测两类。而在我们的项目中，我们将使用分类学习这类监督学习。
+监督学习的基本架构和流程：首先准备训练数据，然后抽取数据之中所需要的特征，形成特征向量（Feature Vectors）;接着，把这些特征向量连同对应的标记、目标（Label）一并送入学习算法（Machine Learning Algorithm）中，训练出一个预测模型（Predictive Model）;然后，采用同样的特征抽取方法作用于新的数据，得到用于测试的特征向量；最后，使用预测模型对这些待测试的特征向量进行预测并得到结果（Expected Label）。
+监督学习的架构流程图大体如下：
+<img src="https://i.imgur.com/jB28NnH.png" /></p>
+<h2>获取更多信息</h2>
+<p>技术方案咨询：13275063516</p>
+
+</body>
 </html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
